@@ -85,7 +85,9 @@ for i in range(30,-1,-1):
     blur_gaus = cv2.GaussianBlur(gray,(3,3),0)
     kernel = np.ones((3,3), np.uint8)
     thresh_adaptive = cv2.adaptiveThreshold(blur_gaus,255,cv2.  ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV,7,11)
+
     letter_img = letters(thresh_adaptive)
-    #cv2.imshow("letter_img", letter_img)
+
+    cv2.imshow("letter_img", letter_img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
